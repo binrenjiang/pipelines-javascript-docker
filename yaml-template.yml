@@ -6,6 +6,7 @@ parameters:
   - ubuntu-latest
   - windows-latest
 
-pool: ${{ parameters.userpool }}
+pool: 
+  vmimage: ${{ parameters.userpool }}
 steps:
 - script: echo good
