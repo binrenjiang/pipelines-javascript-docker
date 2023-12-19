@@ -6,15 +6,8 @@
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
-variables:
-  para: test
 
-# - template: yaml-template.yml
-#   parameters:
-#       my_param: $(para)
 extends:
   template: yaml-template.yml
   parameters:
-      my_param: $(para)
+    userpool: private-pool-1
