@@ -16,4 +16,4 @@ pool:
 extends:
   template: yaml-template.yml
   parameters:
-      my_param: test
+      my_param: $(para)
