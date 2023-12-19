@@ -5,9 +5,7 @@
 
 trigger: none
 
-variables:
-   POOL: ubuntu-latest
 extends:
   template: yaml-template.yml
   parameters:
-    userpool: $(POOL)
+    userpool: ubuntu-latest
