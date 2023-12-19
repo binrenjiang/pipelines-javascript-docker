@@ -6,6 +6,7 @@
 trigger: none
 
 extends:
-  template: yaml-template.yml
+  template: pipelines-javascript-docker/yaml-template.yml
+
   parameters:
     userpool: ubuntu-latest
