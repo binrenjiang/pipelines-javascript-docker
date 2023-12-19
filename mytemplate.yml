@@ -1,9 +1,8 @@
-parameters:
-  name: my_param
-  type: string
-
 steps:
-- task: PowerShell@2
-  inputs:
-   targetType: 'inline'
-   script: echo "${{ parameters.my_param }}"
+- script: echo Build.SourceBranch = $(Build.SourceBranch) # outputs refs/heads/main
+- script: echo Build.Reason = $(Build.Reason) # outputs IndividualCI
+- ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main') }}: 
+  - script: echo I run only if Build.SourceBranch = refs/heads/main 
+- ${{ if eq(variables['Build.Reason'], 'IndividualCI') }}: 
+  - script: echo I run only if Build.Reason = IndividualCI 
+- script: echo I run after the conditions
