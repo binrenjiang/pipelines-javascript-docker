@@ -9,20 +9,11 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-
-variables:
-- group: MyVarGroup
-- name: para
-  value: $[replace(replace('True',eq(variables['compare'], '0'), 'abc'),'True','xyz')]
-
 steps:
 - task: PowerShell@2
   inputs:
    targetType: 'inline'
    script:  | 
-           echo "$(SomeNumber)"
-           echo "$(samplevariable)"
-           echo "$(compare)"
            echo "$(para)"
 - template: yaml-template.yml
   parameters:
