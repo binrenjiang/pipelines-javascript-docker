@@ -6,4 +6,4 @@
 trigger: none
 
 extends:
-  template: mytemplate.yml
+  template: yaml-template.yml
