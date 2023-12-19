@@ -1,0 +1,29 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+
+variables:
+- group: MyVarGroup
+- name: para
+  value: $[replace(replace('True',eq(variables['compare'], '0'), 'abc'),'True','xyz')]
+
+steps:
+- task: PowerShell@2
+  inputs:
+   targetType: 'inline'
+   script:  | 
+           echo "$(SomeNumber)"
+           echo "$(samplevariable)"
+           echo "$(compare)"
+           echo "$(para)"
+- template: mytemplate.yml
+  parameters:
+      my_param: $(para)
