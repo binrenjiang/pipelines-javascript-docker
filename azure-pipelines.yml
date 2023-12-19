@@ -9,12 +9,17 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+
+# - template: yaml-template.yml
+#   parameters:
+#       my_param: $(para)
+extends:
+  template: yaml-template.yml
+  parameters:
+      my_param: $(para)
 steps:
 - task: PowerShell@2
   inputs:
    targetType: 'inline'
    script:  | 
            echo "$(para)"
-- template: yaml-template.yml
-  parameters:
-      my_param: $(para)
