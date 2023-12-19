@@ -24,6 +24,6 @@ steps:
            echo "$(samplevariable)"
            echo "$(compare)"
            echo "$(para)"
-- template: mytemplate.yml
+- template: yaml-template.yml
   parameters:
       my_param: $(para)
