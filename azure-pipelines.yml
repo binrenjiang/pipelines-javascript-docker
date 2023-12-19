@@ -9,4 +9,4 @@ trigger: none
 extends:
   template: yaml-template.yml
   parameters:
-    userpool: private-pool-1
+    userpool: ubuntu-latest
